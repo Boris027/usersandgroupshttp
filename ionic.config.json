@@ -1,0 +1,7 @@
+{
+  "name": "usersandgroupshttp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
