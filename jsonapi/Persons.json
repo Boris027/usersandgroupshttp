@@ -1,0 +1,179 @@
+{
+    "grupos": [
+      {
+        "id": "g1",
+        "nombre": "Grupo Alpha"
+      },
+      {
+        "id": "g2",
+        "nombre": "Grupo Beta"
+      },
+      {
+        "id": "g3",
+        "nombre": "Grupo Gamma"
+      },
+      {
+        "id": "g4",
+        "nombre": "Grupo Delta"
+      },
+      {
+        "id": "g5",
+        "nombre": "Grupo Epsilon"
+      },
+      {
+        "id": "g6",
+        "nombre": "Grupo Zeta"
+      },
+      {
+        "id": "g7",
+        "nombre": "Grupo Theta"
+      },
+      {
+        "id": "g8",
+        "nombre": "Grupo Iota"
+      }
+    ],
+    "personas": [
+      {
+        "id": "p1",
+        "nombre": "Carlos",
+        "apellido": "Ramírez",
+        "edad": "25",
+        "grupoId": "g1"
+      },
+      {
+        "id": "p2",
+        "nombre": "María",
+        "apellido": "Gómez",
+        "edad": "30",
+        "grupoId": "g2"
+      },
+      {
+        "id": "p3",
+        "nombre": "Juan",
+        "apellido": "Fernández",
+        "edad": "40",
+        "grupoId": "g1"
+      },
+      {
+        "id": "p4",
+        "nombre": "Ana",
+        "apellido": "López",
+        "edad": "22",
+        "grupoId": "g3"
+      },
+      {
+        "id": "p5",
+        "nombre": "Pedro",
+        "apellido": "Martínez",
+        "edad": "35",
+        "grupoId": "g4"
+      },
+      {
+        "id": "p6",
+        "nombre": "Lucía",
+        "apellido": "Hernández",
+        "edad": "29",
+        "grupoId": "g2"
+      },
+      {
+        "id": "p7",
+        "nombre": "Miguel",
+        "apellido": "Vázquez",
+        "edad": "31",
+        "grupoId": "g5"
+      },
+      {
+        "id": "p8",
+        "nombre": "Laura",
+        "apellido": "Pérez",
+        "edad": "27",
+        "grupoId": "g3"
+      },
+      {
+        "id": "p9",
+        "nombre": "Javier",
+        "apellido": "Sánchez",
+        "edad": "38",
+        "grupoId": "g6"
+      },
+      {
+        "id": "p10",
+        "nombre": "Carolina",
+        "apellido": "Ruiz",
+        "edad": "33",
+        "grupoId": "g7"
+      },
+      {
+        "id": "p11",
+        "nombre": "Andrés",
+        "apellido": "Mendoza",
+        "edad": "26",
+        "grupoId": "g5"
+      },
+      {
+        "id": "p12",
+        "nombre": "Isabel",
+        "apellido": "Cruz",
+        "edad": "24",
+        "grupoId": "g8"
+      },
+      {
+        "id": "p13",
+        "nombre": "Diego",
+        "apellido": "Morales",
+        "edad": "45",
+        "grupoId": "g6"
+      },
+      {
+        "id": "p14",
+        "nombre": "Sofía",
+        "apellido": "Jiménez",
+        "edad": "28",
+        "grupoId": "g4"
+      },
+      {
+        "id": "p15",
+        "nombre": "Raúl",
+        "apellido": "García",
+        "edad": "36",
+        "grupoId": "g7"
+      },
+      {
+        "id": "p16",
+        "nombre": "Daniela",
+        "apellido": "Castro",
+        "edad": "34",
+        "grupoId": "g8"
+      },
+      {
+        "id": "p17",
+        "nombre": "Manuel",
+        "apellido": "Ortega",
+        "edad": "42",
+        "grupoId": "g1"
+      },
+      {
+        "id": "p18",
+        "nombre": "Natalia",
+        "apellido": "Reyes",
+        "edad": "37",
+        "grupoId": "g3"
+      },
+      {
+        "id": "p19",
+        "nombre": "Julio",
+        "apellido": "Durán",
+        "edad": "32",
+        "grupoId": "g6"
+      },
+      {
+        "id": "p20",
+        "nombre": "Verónica",
+        "apellido": "Flores",
+        "edad": "41",
+        "grupoId": "g5"
+      }
+    ]
+  }
+  
