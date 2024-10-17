@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { PERSONREPOSITORY, URLTOKEN } from './core/repositories/tokens';
+import { IBaseHttp } from './core/repositories/interfaces/base-http.interface';
+import { Person } from './core/models/Person-model.interface';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  constructor(
+    //@Inject(URLTOKEN) nombre:String
+    //@Inject(PERSONREPOSITORY) nombre:IBaseHttp<Person>
+  ) {
+    //console.log(nombre)
+    //console.log(nombre)
+  }
 }
