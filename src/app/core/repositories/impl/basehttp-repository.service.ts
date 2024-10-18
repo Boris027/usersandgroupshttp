@@ -7,6 +7,9 @@ import { HttpClient } from '@angular/common/http';
 import { PaginatedFromApi } from '../../models/PaginatedfromApi-model.interface';
 import { RawPersonFromApi } from '../../models/RawPersonfromApi-model';
 import { Paginated } from '../../models/Paginates-model';
+import { Mapping } from './People-Mapping.service';
+import { IMaping } from '../../models/Map-model.interface';
+import { Person } from '../../models/Person-model.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +19,8 @@ export class BaseHttpRepository<T extends Model> implements IBaseHttp<T> {
   constructor(
     @Inject (URLTOKEN) protected urltoken:string,
     @Inject (RESOURCENAMETOKEN) protected resourcenametoken:string,
-    protected httpclient:HttpClient
+    protected httpclient:HttpClient,
+    @Inject (Mapping) protected mapping:IMaping<Person>
   ) { }
 
 

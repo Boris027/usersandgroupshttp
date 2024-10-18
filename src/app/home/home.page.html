@@ -5,10 +5,9 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let item of personas; let index">
+    <ion-item *ngFor="let item of getpersons(); let index">
       <ion-avatar slot="start">
         <img [src]="'https://picsum.photos/80/80?random=' + index" alt="avatar" />
       </ion-avatar>

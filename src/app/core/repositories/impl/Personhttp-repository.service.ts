@@ -10,7 +10,8 @@ import { HttpClient } from '@angular/common/http';
 import { Paginated } from '../../models/Paginates-model';
 import { RawPersonFromApi } from '../../models/RawPersonfromApi-model';
 import { PaginatedFromApi } from '../../models/PaginatedfromApi-model.interface';
-import { devolverbuenopaginated } from './map';
+import { Mapping } from './People-Mapping.service';
+import { IMaping } from '../../models/Map-model.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -20,27 +21,21 @@ export class PersonHttpRepository extends BaseHttpRepository<Person> implements 
   constructor(
     @Inject (URLTOKEN) urltoken:string,
     httpclient: HttpClient,
-    @Inject (RESOURCENAMETOKEN) resourcenametoken:string
+    @Inject (RESOURCENAMETOKEN) resourcenametoken:string,
+    @Inject (Mapping) mapping:IMaping<Person>
   ) { 
     console.log("personhttp")
-    super(urltoken,resourcenametoken,httpclient)
+    super(urltoken,resourcenametoken,httpclient,mapping)
   }
 
   override getall(page: number, pageSize: number): Observable<Paginated<Person>> {
+
+
+    return this.httpclient.get<PaginatedFromApi>(this.urltoken+`${this.resourcenametoken}?_page=${page}&_per_page=${pageSize}`)
+    .pipe(map(c=>this.mapping.getall(page,pageSize,c.pages,c.data)))
+
     
-    return this.httpclient.get<PaginatedFromApi>(`${this.urltoken}${this.resourcenametoken}?_page=${page}&_per_page=${pageSize}`).pipe(
-      map(value => {
-        
-        const paginada: Paginated<Person> = devolverbuenopaginated(value,pageSize,page);
-        
-        return paginada; 
-      }),
-      catchError(err => {
-        console.error('Ha habido algún problema con la API', err);
-        
-        return throwError(() => new Error('Error en la API'));
-      })
-    );
+
   }
   
 

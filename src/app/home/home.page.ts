@@ -11,56 +11,46 @@ import { Person } from '../core/models/Person-model.interface';
 })
 export class HomePage {
 
-  personas: Person[] = [];
-  page:number=1
-  pagesize:number=5
-  totalItems: number = 0; // Total de elementos en el servidor
-  totalpages:number=0;
+  private personas:Person[]=[]
+  private page:number=1
+  private pagesize:number=5
+  private totalpages:number=0
+ 
   constructor(
     @Inject (PERSONESERVICE) private servicio:IPersonService
   ) {
-    this.cargarPersonas()
-    
+    this.getpage()
   }
 
-  async cargarPersonas() {
-    // Llamamos al servicio para obtener los datos paginados
-    this.servicio.getall(this.page, this.pagesize).subscribe({
-      next: (response: Paginated<Person>) => {
-        console.log(response)
-        this.personas=[...this.personas,...response.data]
-        // Aquí manejamos la respuesta paginada
-        
-        this.totalItems = response.pages; 
-        this.totalpages=response.pages
-      },
-      error: (err) => {
-        console.error('Error al cargar los datos', err);
+  getpage(){
+    this.servicio.getall(this.page,this.pagesize).subscribe({
+      next:(value:Paginated<Person>) => {
+        console.log(value.data)
+        this.personas = [...this.personas, ...value.data];  
+        this.totalpages=value.pages
       }
-    });
+      
+    })
+    
   }
 
-  // Método para pasar a la página siguiente
-  paginaSiguiente() {
-
-    if(this.page<=this.totalpages){
-      this.page++;
-      this.cargarPersonas();
+  siguientepagina(){
+    if(this.totalpages>this.page){
+      this.page+=1;
+      this.getpage()
     }
-
-    
     
   }
 
-  
-
-  onIonInfinite(evento:any){
-    console.log("a")
-    this.paginaSiguiente()
-    
-    evento.target.complete()
+  getpersons(){
+    return this.personas
   }
 
-  
+  onIonInfinite(event:any){
+    this.siguientepagina()
+    event.target.complete()
+  }
+
+ 
 
 }
